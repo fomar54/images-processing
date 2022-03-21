@@ -4,7 +4,7 @@ float rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2;
 PImage pic1, pic2;
 //
 //Geometry
-fullScreen(); displayWidth, displayHeight
+fullScreen(); 
 //Landsacpe Presentation, not square or protrait
 //
 //Populating Variables
