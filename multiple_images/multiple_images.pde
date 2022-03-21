@@ -4,12 +4,12 @@ float rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2;
 PImage pic1, pic2;
 //
 //Geometry
-size(900, 680); //fullScreen(); displayWidth, displayHeight
+fullScreen(); displayWidth, displayHeight
 //Landsacpe Presentation, not square or protrait
 //
 //Populating Variables
-pic1 = loadImage("cbc662299bd35357e519fe867444b86c.jpeg"); //600748
-pic2 = loadImage("81nh7yEGiHL._SX355_.jpg") //355  × 298
+pic1 = loadImage("cbc662299bd35357e519fe867444b86c.jpeg"); // Dimensions 600 748
+pic2 = loadImage("81nh7yEGiHL._SX355_.jpg"); // Dimensions 355 298
 //
 //Aspect Ration Calculations
 int pic1Width = 600; //NOTE: mine not yours
