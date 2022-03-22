@@ -2,6 +2,10 @@
 float rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1;
 float rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2;
 PImage pic1, pic2;
+String title = " these are piantings that I enjoy ";
+float titleX,titleY, titleWidth, titleHeight;
+PFont titlefont;
+color blue=#3060E0 , restDefaultlink=#FAFBFF;
 //
 //Geometry
 fullScreen(); 
@@ -57,11 +61,23 @@ rectWidthPic1 = width*1/2;
 rectHeightPic1 = height*1/2;
 rectXPic2 = width*1/8;
 rectYPic2 = height*1/2;
-rectWidthPic2 = width*6/8;
+rectWidthPic2 = width*4/8;
 rectHeightPic2 = height*1/2;
+titleX = width*1/5;
+titleY = height*1/10;
+titleWidth = displayWidth*3/5; // Rect ends at 4/5's of the width
+titleHeight = displayHeight*1/10;// ect ends at 2/10's of height 
 //
 //Rectangle Layout & Image Printing on Canvas
 rect(rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1); //Image 1, landscape presentation
 rect(rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2); //Image 2, landscape presentation 
 image(pic1, rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1);
 image(pic2, rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2);
+//layout or textspace and typograhical features
+rect(titleX,titleY, titleWidth, titleHeight);
+fill(blue);//ink, hexidecmial copied from the color selector
+textAlign(CENTER,CENTER);//Align X&Y, see processing.org/reference
+//values:[LEFT] [CENTER][RIGHT]&[TOP|CENTRE | BOTTOM|BASELINE}
+textFont(titlefont,25);//change the number until it fits
+text(title,titleX,titleY, titleWidth, titleHeight);
+fill(restDefaultlink);
