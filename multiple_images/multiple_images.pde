@@ -83,7 +83,7 @@ titlefont = createFont("HiraMinProN-W3",55);//Verify the font exists in processi
 //layout or textspace and typograhical features
 rect(titleX,titleY, titleWidth, titleHeight);
 fill(blue);//ink, hexidecmial copied from the color selector
-textAlign(CENTER,CENTER);//Align X&Y, see processing.org/reference
+textAlign(CENTER,BOTTOM);//Align X&Y, see processing.org/reference
 //values:[LEFT] [CENTER][RIGHT]&[TOP|CENTRE | BOTTOM|BASELINE}
 textFont(titlefont, 25);//change the number until it fits
 text(title,titleX,titleY, titleWidth, titleHeight);
