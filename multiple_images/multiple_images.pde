@@ -73,11 +73,18 @@ rect(rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1); //Image 1, landscape 
 rect(rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2); //Image 2, landscape presentation 
 image(pic1, rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1);
 image(pic2, rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2);
+
+//Fonts from OS (Operating System)
+String[] fontlist = PFont.list(); //To list all fonts available 
+printArray(fontlist);//For listing all possible fonts to chosse from, then creatFont
+titlefont = createFont("HiraMinProN-W3",55);//Verify the font exists in processing java
+//tools/createfont/find font/ do not press okay, known bug
+ 
 //layout or textspace and typograhical features
 rect(titleX,titleY, titleWidth, titleHeight);
 fill(blue);//ink, hexidecmial copied from the color selector
 textAlign(CENTER,CENTER);//Align X&Y, see processing.org/reference
 //values:[LEFT] [CENTER][RIGHT]&[TOP|CENTRE | BOTTOM|BASELINE}
-textFont(titlefont,25);//change the number until it fits
+textFont(titlefont, 25);//change the number until it fits
 text(title,titleX,titleY, titleWidth, titleHeight);
 fill(restDefaultlink);
