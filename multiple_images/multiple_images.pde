@@ -54,6 +54,8 @@ if(widthPic2Larger== true );imageHeightRatioPic2 = float(smallerPic2Dimension)/f
 if(heightPic2Larger == true ); imageHeightRatioPic2  = float(largerPic2Dimension)/float(largerPic2Dimension);
 if(heightPic2Larger == true );imageWidthRatioPic2  = float(smallerPic2Dimension)/float(largerPic2Dimension);
 println(imageWidthRatioPic1,imageHeightRatioPic1,imageWidthRatioPic2,imageHeightRatioPic2 );//Verifying Variables 
+
+ //use ratios to change the image width and height properties of Rectangle Variables
 //
 rectXPic1 = width*1/4;
 rectYPic1 = height*0;
@@ -68,11 +70,29 @@ titleY = height*1/10;
 titleWidth = displayWidth*3/5; // Rect ends at 4/5's of the width
 titleHeight = displayHeight*1/10;// ect ends at 2/10's of height 
 //
+
+//Final Aspect Ratio Caluations 
+float pic1WidthAdjusted,pic1HeightAdjusted,pic2WidthAdjusted,pic2HeightAdjusted;
+ pic1WidthAdjusted = pic1Width*imageWidthRatioPic1;
+ pic1HeightAdjusted = pic1Height*imageHeightRatioPic1;
+ pic2WidthAdjusted = pic2Width*imageWidthRatioPic2;
+ pic2HeightAdjusted = pic2Height*imageHeightRatioPic2;
+ println(pic1Width,pic1Height,pic2Width,pic2Height);
+  println(pic2HeightAdjusted,pic2WidthAdjusted,pic1HeightAdjusted, pic1WidthAdjusted);
+//
+//
+
 //Rectangle Layout & Image Printing on Canvas
 rect(rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1); //Image 1, landscape presentation
 rect(rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2); //Image 2, landscape presentation 
+
+//image using Rect() Variables
 image(pic1, rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1);
 image(pic2, rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2);
+//Change the Rect Variables to Aspect Ratio
+image(pic1, rectXPic1, rectYPic1,pic1HeightAdjusted, pic1WidthAdjusted);
+image(pic2, rectXPic2, rectYPic2,pic2WidthAdjusted,pic2HeightAdjusted );
+
 
 //Fonts from OS (Operating System)
 String[] fontlist = PFont.list(); //To list all fonts available 
@@ -83,7 +103,7 @@ titlefont = createFont("HiraMinProN-W3",55);//Verify the font exists in processi
 //layout or textspace and typograhical features
 rect(titleX,titleY, titleWidth, titleHeight);
 fill(blue);//ink, hexidecmial copied from the color selector
-textAlign(CENTER,BOTTOM);//Align X&Y, see processing.org/reference
+textAlign(CENTER,CENTER);//Align X&Y, see processing.org/reference
 //values:[LEFT] [CENTER][RIGHT]&[TOP|CENTRE | BOTTOM|BASELINE}
 textFont(titlefont, 25);//change the number until it fits
 text(title,titleX,titleY, titleWidth, titleHeight);
