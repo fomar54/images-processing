@@ -2,7 +2,6 @@
 float rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1;
 float rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2;
 PImage pic1, pic2;
-String title = " these are piantings that I enjoy ";
 float titleX,titleY, titleWidth, titleHeight;
 PFont titlefont;
 color blue=#3060E0 , restDefaultlink=#FAFBFF;
@@ -97,7 +96,7 @@ fill(blue);//ink, hexidecmial copied from the color selector
 textAlign(CENTER,CENTER);//Align X&Y, see processing.org/reference
 //values:[LEFT] [CENTER][RIGHT]&[TOP|CENTRE | BOTTOM|BASELINE}
 textFont(titlefont, 25);//change the number until it fits
-text(title,titleX,titleY, titleWidth, titleHeight);
+text(title ,titleX,titleY, titleWidth, titleHeight);
 fill(restDefaultlink);
 rect(rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1); //Image 1, landscape presentation
 rect(rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2); //Image 2, landscape presentation 
