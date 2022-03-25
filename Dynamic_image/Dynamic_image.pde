@@ -1,10 +1,6 @@
 float rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1;
 float rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2;
 PImage pic1, pic2;
-String title = " these are piantings that I enjoy ";
-float titleX,titleY, titleWidth, titleHeight;
-PFont titlefont;
-color blue=#3060E0 , restDefaultlink=#FAFBFF;
 
 
 float imageWidthRatioPic1=0.0, imageHeightRatioPic1=0.0, imageWidthRatioPic2=0.0, imageHeightRatioPic2=0.0; 
@@ -15,7 +11,7 @@ color red=#FF0000;
 //
 void setup()
 {
-  size(900, 680); //fullScreen(); displayWidth, displayHeight
+ fullScreen(); 
   //Landsacpe Presentation, not square or protrait
   pic1 = loadImage("cbc662299bd35357e519fe867444b86c.jpeg"); // Dimensions 600 748
 pic2 = loadImage("81nh7yEGiHL._SX355_.jpg"); // Dimensions 355 298
@@ -87,19 +83,6 @@ int pic2Height = 298; //NOTE: mine not yours
 void draw()
 { //Note: DRAW Loop repeats 60 times / second, static images should be in SETUP, "system resourses"
   //Rectangle Layout & Image Printing on Canvas
-//Fonts from OS (Operating System)
-String[] fontlist = PFont.list(); //To list all fonts available 
-printArray(fontlist);//For listing all possible fonts to chosse from, then creatFont
-titlefont = createFont("HiraMinProN-W3",55);//Verify the font exists in processing java
-//tools/createfont/find font/ do not press okay, known bug
- 
-rect(titleX,titleY, titleWidth, titleHeight);
-fill(blue);//ink, hexidecmial copied from the color selector
-textAlign(CENTER,CENTER);//Align X&Y, see processing.org/reference
-//values:[LEFT] [CENTER][RIGHT]&[TOP|CENTRE | BOTTOM|BASELINE}
-textFont(titlefont, 25);//change the number until it fits
-text(title,titleX,titleY, titleWidth, titleHeight);
-fill(restDefaultlink);
 
  //rect(rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1); //Image 1, landscape presentation
  rect(rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2); //Image 2, landscape presentation 
@@ -109,7 +92,7 @@ fill(restDefaultlink);
  // Change the Rect() Variables to Aspect Ratio
  image(pic1, rectXPic1, rectYPic1, pic1WidthAdjusted, pic1HeightAdjusted);
  println ("Image one looks good, put some text underneath to fill in the space."); //Great Design Change for Aspect Ratio
- //image(pic2, rectXPic2, rectYPic2, pic2WidthAdjusted, pic2HeightAdjusted);
+ image(pic2, rectXPic2, rectYPic2, pic2WidthAdjusted, pic2HeightAdjusted);
  //Center image in rect(), pic2, by changing the yRect() value
  image(pic2, rectXPic2, rectYPic2+(rectYPic2*1/5), pic2WidthAdjusted, pic2HeightAdjusted);
 }//End draw
